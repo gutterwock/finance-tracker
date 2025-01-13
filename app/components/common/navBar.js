@@ -1,12 +1,12 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { Button } from "@react-navigation/elements";
-import { createStaticNavigation, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
-const NavBar = () => {
+const Navbar = () => {
 	const navigation = useNavigation();
 
 	return (
-		<View>
+		<View testID="navbar">
 			<Button onPress={() => navigation.navigate("TransactionsScreen")}>
 				Transactions
 			</Button>
@@ -20,4 +20,4 @@ const NavBar = () => {
 	);
 };
 
-export default NavBar;
+export default Navbar;

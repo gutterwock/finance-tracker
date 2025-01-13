@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import NavBar from "./navBar";
+import Navbar from "./navbar";
 
 const Boilerplate = (props) => {
 	const { screen } = props;
@@ -7,7 +7,7 @@ const Boilerplate = (props) => {
 	return (
 		<View style={styles.container}>
 			{screen}
-			<NavBar />
+			<Navbar />
 		</View>
 	);
 };
