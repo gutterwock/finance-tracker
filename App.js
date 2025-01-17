@@ -1,23 +1,21 @@
 import * as React from "react";
 import { createStaticNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { initialRouteName, screensMapping } from "./app/screens"
 
-import PlanningScreen from "./app/components/planning";
-import SettingsScreen from "./app/components/settings";
-import TransactionsScreen from "./app/components/transactions";
+const screens = Object.fromEntries(
+	Object.keys(screensMapping)
+		.map((name) => [name, screensMapping[name].screen])
+);
 
 const RootStack = createNativeStackNavigator({
-	initialRouteName: "TransactionsScreen",
+	initialRouteName,
 	screenOptions: {
 		headerStyle: {
 			backgroundColor: "tomato"
 		}
 	},
-	screens: {
-		PlanningScreen,
-		SettingsScreen,
-		TransactionsScreen
-	},
+	screens,
 });
 
 const Navigation = createStaticNavigation(RootStack);
